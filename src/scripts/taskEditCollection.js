@@ -37,7 +37,28 @@ const taskEditCollection = {
         let editButton = document.createElement("button");
         editButton.textContent = "Edit Task"
 
-        editButton.addEventListener("click", )
+        editButton.addEventListener("click", () => {
+            let editedTask = {
+                name: inputTaskName.value,
+                date: taskDate.value,
+                completionDate: inputCompleteDate.value
+            }
+            
+            taskCollection.putExistingTask(taskObjectToEdit.id, editedTask)
+            .then(response => {
+                taskList.taskify()
+            })
+        })
 
+        let taskItemArticle = document.querySelector(`${articleId}`)
+        while (taskItemArticle.firstChild) {
+            taskItemArticle.removeChild(taskItemArticle.firstChild);
+        }
+        taskItemArticle.appendChild(taskNameField);
+        taskItemArticle.appendChild(taskDateField);
+        taskItemArticle.appendChild(taskCompletionField);
+        taskItemArticle.appendChild(editButton);
     }
 }
+
+export default taskEditCollection
