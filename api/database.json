@@ -1,36 +1,28 @@
-Events : [
-    {
-        EventID: 1,
-        Name: "Introductios!",
-        Date: "01/19/2019",
-        Location: "2500 West End Ave, Nashville, TN 37203"
-    },
+{
+    "News":[
+        
+        {
+            "URL": "https://www.newschannel5.com/news/is-your-pet-food-causing-your-dog-to-have-a-potentially-fatal-disease",
+            "Title": "Is your pet food causing your dog to have a potentially fatal disease?",
+            "Summary": "Could the food you are feeding your pets potentially be taking their lives? There's a chance, and many pet owners have no idea."
+        },
+        
+        {
+            "URL": "https://www.newschannel5.com/news/on-the-rise/new-park-to-open-in-the-north-gulch-this-spring",
+            "Title": "New park to open in the North Gulch this spring",
+            "Summary": "...Frankie Pierce Park will offer volleyball courts, a dog park, and a yoga lawn."
+        },
+        
+        {
+            "URL":"https://www.americanveterinarian.com/news/fda-pfizer-work-to-alleviate-shortage-of-injectable-opioids",
+            "Title": "FDA, Pfizer Work to Alleviate Shortage of Injectable Opioids",
+            "Summary": "The FDA and Pfizer Inc. are working to help alleviate a shortage of certain injectable opioids available to treat pain in animals by facilitating the availability of a limited amount of product labeled for human use."
+        }
 
-    {
-        EventID: 2,
-        Name: "Play Date 1",
-        Date: "01/26/2019",
-        Location:"Shelby Ave & S. 20th Street, Nashville, TN 37206"
-    },
-
-    {
-        EventID: 3,
-        Name: "Dog Show",
-        Date:"02/02/2019",
-        Location:"2500 West End Ave, Nashville, TN 37203"
-    },
-
-    {
-        EventID: 4,
-        Name: "Health Tips",
-        Date:"02/09/2019",
-        Location:"113 Belinda Pkwy, Mt Juliet, TN 37122"
-    },
-
-    {
-        EventID: 5,
-        Name: "Play Date 2",
-        Date:"02/16/2019",
-        Location:"3150 McGavock Pk, Nashville, TN 37214"
+      
+    ],
+    "Messages":[],
+    "Events":[],
+    "Tasks":[]
     }
-]
+    
