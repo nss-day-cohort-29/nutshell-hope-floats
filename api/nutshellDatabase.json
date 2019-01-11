@@ -1,19 +1,17 @@
 {
     "News":[],
     "Messages":[],
-    "Events":[
+    "Events":[],
+    "Tasks":[
         {
-            "event": "Birthday Party",
-            "date": "02/16/19",
-            "location": "dogPark",
-            "id": 1
+            "id": 1,
+            "user id": "Ricky",
+            "task": "Tell owner to take me out for a walk at 2:00"
         },
         {
-            "event": "Graduation",
-            "date": "05/18/19",
-            "location": "NSS",
-            "id": 2
+            "id": 2,
+            "user id": "Mary",
+            "task": "Vet appointment at noon"
         }
-    ],
-    "Tasks":[]
+    ]
 }
