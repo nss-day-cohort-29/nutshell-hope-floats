@@ -3,20 +3,6 @@ import messageList from "./messageList"
 const messageForm = {
   createAndAppendForm() {
 
-    function getTimeStamp() {
-      var now = new Date();
-      return ((now.getMonth() + 1) + '/' +
-              (now.getDate()) + '/' +
-               now.getFullYear() + " " +
-               now.getHours() + ':' +
-               ((now.getMinutes() < 10)
-                   ? ("0" + now.getMinutes())
-                   : (now.getMinutes())) + ':' +
-                   
-               ((now.getSeconds() < 10)
-                   ? ("0" + now.getSeconds())
-                   : (now.getSeconds())));
-  }
 
     let formHeader = document.createElement("h2")
     formHeader.textContent = "   Welcome To Chat Box"
@@ -45,18 +31,18 @@ const messageForm = {
     messageInputField.appendChild(messageInputLabel)
     messageInputField.appendChild(messageInputBox)
 
-    let messageDateField = document.createElement("fieldset")
+    // let messageDateField = document.createElement("fieldset")
     
 
-    let messageDateLabel = document.createElement("label")
-    messageDateLabel.textContent = "Date "
-    messageDateLabel.setAttribute("for", "message__date")
-    let messageDateInput = document.createElement("input")
-    messageDateInput.setAttribute("id", "date__input")
-    messageDateInput.setAttribute("name", "date__input")
+    // let messageDateLabel = document.createElement("label")
+    // messageDateLabel.textContent = "Date "
+    // messageDateLabel.setAttribute("for", "message__date")
+    // let messageDateInput = document.createElement("p")
+    // messageDateInput.setAttribute("id", "date__input")
+    // messageDateInput.setAttribute("name", "date__input")
 
-    messageDateField.appendChild(messageDateLabel)
-    messageDateField.appendChild(messageDateInput)
+    // messageDateField.appendChild(messageDateLabel)
+    // messageDateField.appendChild(messageDateInput)
 
     let submitButton = document.createElement("button")
     submitButton.textContent = "Send"
@@ -69,7 +55,7 @@ const messageForm = {
     messageFormFragment.appendChild(formHeader)
     messageFormFragment.appendChild(messageNameField)
     messageFormFragment.appendChild(messageInputField)
-    messageFormFragment.appendChild(messageDateField)
+    // messageFormFragment.appendChild(messageDateField)
     messageFormFragment.appendChild(submitButton)
 
 
@@ -77,13 +63,27 @@ const messageForm = {
     formArticle.appendChild(messageFormFragment)
 
   },
+   getTimeStamp() {
+        var now = new Date();
+        return ((now.getMonth() + 1) + '/' +
+                (now.getDate()) + '/' +
+                 now.getFullYear() + " " +
+                 now.getHours() + ':' +
+                 ((now.getMinutes() < 10)
+                     ? ("0" + now.getMinutes())
+                     : (now.getMinutes())) + ':' +
+                     
+                 ((now.getSeconds() < 10)
+                     ? ("0" + now.getSeconds())
+                     : (now.getSeconds())));
+    },
   
 
   handleAddNewMessage(event) {
 
     let inputMessageName = document.querySelector("#message__name").value
     let inputMessageContent = document.querySelector("#message__content").value
-    let inputMessageDate = document.querySelector("#date__input").value
+    let inputMessageDate = messageForm.getTimeStamp()
 
 
 

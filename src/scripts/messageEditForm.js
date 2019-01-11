@@ -30,7 +30,7 @@ const messageEditForm = {
 
     let dateLabel = document.createElement("label")
     dateLabel.textContent = "Date  "
-    let dateInput = document.createElement("input")
+    let dateInput = document.createElement("p")
     dateInput.value = messageObjToEdit.Date
 
     dateField.appendChild(dateLabel)
