@@ -1,0 +1,19 @@
+{
+    "News":[],
+    "Messages":[],
+    "Events":[
+        {
+            "event": "Birthday Party",
+            "date": "02/16/19",
+            "location": "dogPark",
+            "id": 1
+        },
+        {
+            "event": "Graduation",
+            "date": "05/18/19",
+            "location": "NSS",
+            "id": 2
+        }
+    ],
+    "Tasks":[]
+}
