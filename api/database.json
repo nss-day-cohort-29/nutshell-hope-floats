@@ -1,6 +1,13 @@
 {
-"News":[],
-"Messages":[],
-"Events":[],
-"Tasks":[]
+  "News": [],
+  "Messages": [
+    {
+      "SenderName": "Mary Remo",
+      "Message": "How are you Dolly!!",
+      "Date": "1/10/2019",
+      "id": 4
+    }
+  ],
+  "Events": [],
+  "Tasks": []
 }
