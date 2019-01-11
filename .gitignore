@@ -1,6 +1,3 @@
 node_modules
   .DS_store
-  nutshellDataBase.json
-  
-    
-
+bundle.js
