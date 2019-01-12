@@ -1,7 +1,9 @@
 import messageCollection from "./messageCollection"
 import messageList from "./messageList"
+
 const messageForm = {
   createAndAppendForm() {
+
 
 
     let formHeader = document.createElement("h2")
@@ -32,7 +34,7 @@ const messageForm = {
     messageInputField.appendChild(messageInputBox)
 
     // let messageDateField = document.createElement("fieldset")
-    
+
 
     // let messageDateLabel = document.createElement("label")
     // messageDateLabel.textContent = "Date "
@@ -63,41 +65,55 @@ const messageForm = {
     formArticle.appendChild(messageFormFragment)
 
   },
-   getTimeStamp() {
-        var now = new Date();
-        return ((now.getMonth() + 1) + '/' +
-                (now.getDate()) + '/' +
-                 now.getFullYear() + " " +
-                 now.getHours() + ':' +
-                 ((now.getMinutes() < 10)
-                     ? ("0" + now.getMinutes())
-                     : (now.getMinutes())) + ':' +
-                     
-                 ((now.getSeconds() < 10)
-                     ? ("0" + now.getSeconds())
-                     : (now.getSeconds())));
-    },
-  
+  getTimeStamp() {
+    var now = new Date();
+    return ((now.getMonth() + 1) + '/' +
+      (now.getDate()) + '/' +
+      now.getFullYear() + " " +
+      now.getHours() + ':' +
+      ((now.getMinutes() < 10)
+        ? ("0" + now.getMinutes())
+        : (now.getMinutes())) + ':' +
+
+      ((now.getSeconds() < 10)
+        ? ("0" + now.getSeconds())
+        : (now.getSeconds())));
+  },
+
+
 
   handleAddNewMessage(event) {
 
-    let inputMessageName = document.querySelector("#message__name").value
-    let inputMessageContent = document.querySelector("#message__content").value
+    let inputMessageName = document.querySelector("#message__name")
+    let inputMessageContent = document.querySelector("#message__content")
     let inputMessageDate = messageForm.getTimeStamp()
 
 
 
+
+
     let newMessage = {
-      SenderName: inputMessageName,
-      Message: inputMessageContent,
+      SenderName: inputMessageName.value,
+      Message: inputMessageContent.value,
       Date: inputMessageDate
     }
 
     messageCollection.postNewMessage(newMessage)
-    // .then(reponse => {
-    messageList.chatify()
-    // })
+      .then(reponse => {
+
+        messageList.chatify()
+        })
+
+
   }
+  
+  clearForm() {
+    inputMessageName.value = ""
+    inputMessageContent.value = ""
+  }
+  messageForm.clearForm()
+
+
 }
 
 export default messageForm

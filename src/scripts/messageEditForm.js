@@ -1,4 +1,5 @@
 import messageCollection from "./messageCollection"
+import messageForm from "./messageForm"
 import messageList from "./messageList"
 
 const messageEditForm = {
@@ -25,16 +26,17 @@ const messageEditForm = {
 
     messageInputField.appendChild(messageInputLabel)
     messageInputField.appendChild(messageContentInput)
+   
+    let hroizontalRule  = document.createElement("hr")
+    // let dateField = document.createElement("p")
 
-    let dateField = document.createElement("p")
+    // let dateLabel = document.createElement("label")
+    // dateLabel.textContent = " date"
+    // let dateInput = document.createElement("p")
+    // dateInput.value = messageObjToEdit.Date
 
-    let dateLabel = document.createElement("label")
-    dateLabel.textContent = "Date  "
-    let dateInput = document.createElement("p")
-    dateInput.value = messageObjToEdit.Date
-
-    dateField.appendChild(dateLabel)
-    dateField.appendChild(dateInput)
+    // dateField.appendChild(dateLabel)
+    // dateField.appendChild(dateInput)
 
     let updateButton = document.createElement("button")
     updateButton.textContent = "Update"
@@ -44,7 +46,7 @@ const messageEditForm = {
       let editedMessage = {
         SenderName: messageNameInput.value,
         Message: messageContentInput.value,
-        Date: dateInput.value
+        Date: messageForm.getTimeStamp()
       }
       
       messageCollection.putExistingMessage(messageObjToEdit.id, editedMessage)
@@ -62,8 +64,9 @@ const messageEditForm = {
     }
     messageItemArticle.appendChild(messageNameField)
     messageItemArticle.appendChild(messageInputField)
-    messageItemArticle.appendChild(dateField)
+    // messageItemArticle.appendChild(dateField)
     messageItemArticle.appendChild(updateButton)
+    messageItemArticle.appendChild(hroizontalRule)
   }
 }
 export default messageEditForm
