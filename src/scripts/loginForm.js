@@ -1,30 +1,30 @@
 import loginCollection from "./loginCollection"
 
-const loginBuilder = {
-   loginBuilding(){
-        let loginField = document.createElement("article")
+const registerBuilder = {
+   registerBuilding(){
+        let registerField = document.createElement("article")
 
-        let loginLabel = document.createElement("label")
-        loginLabel.setAttribute("for", "login")
-        let inputlogin = document.createElement("input");
-        inputlogin.setAttribute("id", "loginName")
-        inputlogin.placeholder= "Login"
-        inputlogin.setAttribute("name", "Login")
+        let registerLabel = document.createElement("label")
+        registerLabel.setAttribute("for", "register")
+        let inputRegister = document.createElement("input");
+        inputRegister.setAttribute("id", "registerName")
+        inputRegister.placeholder= "Username"
+        inputRegister.setAttribute("name", "Username")
 
-        loginField.appendChild(loginLabel)
-        loginField.appendChild(inputlogin)
+        registerField.appendChild(registerLabel)
+        registerField.appendChild(inputRegister)
 
-        let passwordField = document.createElement("article")
+        let emailField = document.createElement("article")
 
-        let passwordLabel = document.createElement("label")
-        passwordLabel.setAttribute("for", "password")
-        let inputPassword = document.createElement("input");
-        inputPassword.setAttribute("id", "loginPassword")
-        inputPassword.placeholder= "Password"
-        inputPassword.setAttribute("name", "Password")
+        let emailLabel = document.createElement("label")
+        emailLabel.setAttribute("for", "email")
+        let inputEmail = document.createElement("input");
+        inputEmail.setAttribute("id", "loginEmail")
+        inputEmail.placeholder= "Email"
+        inputEmail.setAttribute("name", "Email")
 
-        passwordField.appendChild(passwordLabel)
-        passwordField.appendChild(inputPassword)
+        emailField.appendChild(emailLabel)
+        emailField.appendChild(inputEmail)
 
         let loginButton = document.createElement("button")
         loginButton.textContent = "login"
@@ -36,8 +36,8 @@ const loginBuilder = {
 
         registerButton.addEventListener("click", this.handleAddNewRegister)
         let loginFormFragment = document.createDocumentFragment()
-        loginFormFragment.appendChild(loginField)
-        loginFormFragment.appendChild(passwordField)
+        loginFormFragment.appendChild(registerField)
+        loginFormFragment.appendChild(emailField)
         loginFormFragment.appendChild(loginButton)
         loginFormFragment.appendChild(registerButton)
 
@@ -47,16 +47,16 @@ const loginBuilder = {
    },
 
         handleAddNewRegister () {
-         let inputlogin = document.querySelector("#loginName").value
-         let inputPassword = document.querySelector("#loginPassword").value
-         console.log(inputlogin)
+         let register = document.querySelector("#registerName").value
+         let email = document.querySelector("#loginEmail").value
+         console.log(register)
          let newUser = {
-            username: inputlogin,
-            password: inputPassword
+            username: register,
+            email: email
          }
          console.log(newUser);
          loginCollection.postAllLogin(newUser)
 
       }
 }
-export default loginBuilder
+export default registerBuilder
