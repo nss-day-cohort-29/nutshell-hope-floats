@@ -1,3 +1,5 @@
+import loginCollection from "./loginCollection"
+
 const loginBuilder = {
    loginBuilding(){
         let loginField = document.createElement("article")
@@ -32,16 +34,29 @@ const loginBuilder = {
         registerButton.textContent = "register"
         registerButton.setAttribute("class", "register")
 
-
+        registerButton.addEventListener("click", this.handleAddNewRegister)
         let loginFormFragment = document.createDocumentFragment()
         loginFormFragment.appendChild(loginField)
         loginFormFragment.appendChild(passwordField)
         loginFormFragment.appendChild(loginButton)
+        loginFormFragment.appendChild(registerButton)
 
         let loginArticle = document.querySelector(".loginArticle")
         loginArticle.appendChild(loginFormFragment)
-        return inputlogin
+        return loginFormFragment
+   },
 
-   }
+        handleAddNewRegister () {
+         let inputlogin = document.querySelector("#loginName").value
+         let inputPassword = document.querySelector("#loginPassword").value
+         console.log(inputlogin)
+         let newUser = {
+            username: inputlogin,
+            password: inputPassword
+         }
+         console.log(newUser);
+         loginCollection.postAllLogin(newUser)
+
+      }
 }
 export default loginBuilder

@@ -1,6 +1,6 @@
 import eventList from "./eventList"
 import eventBuilder from "./eventBuilder"
-import loginBuilder from "./module1.js"
+import loginBuilder from "./loginForm"
 
 eventList.eventify()
 eventBuilder.eventBuilding()

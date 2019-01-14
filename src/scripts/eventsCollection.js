@@ -35,7 +35,7 @@ const eventsCollection = {
     },
     body: JSON.stringify(eventToEdit)
   })
-}
+},
 }
 
 export default eventsCollection
