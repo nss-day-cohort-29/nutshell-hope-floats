@@ -51,7 +51,7 @@ const taskBuilder = {
 
         let formArticle = document.querySelector(".formTasks");
         formArticle.appendChild(taskFormFragment)
-        return taskBuilder
+        // return taskBuilder
     },
     handleNewTask() {
 
@@ -66,7 +66,8 @@ const taskBuilder = {
         }
 
         taskCollection.postNewTask(newTask)
-        .then(response => {
+        .then(response => response.json())
+        .then(newTaskObject => {
             taskList.taskify()
         })
     }

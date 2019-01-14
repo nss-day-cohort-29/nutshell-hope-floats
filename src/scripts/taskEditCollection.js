@@ -2,55 +2,56 @@ import taskCollection from "./taskCollection"
 import taskList from "./taskList"
 
 const taskEditCollection = {
-    createAndAppendForm (articleId, taskObjectToEdit) {
+    createAndAppendForm (taskObjectToEdit) {
 
         let taskNameField = document.createElement("p");
 
         let taskNameLabel = document.createElement("label");
         taskNameLabel.textContent = "taskName"
         let taskNameInput = document.createElement("input");
-        taskNameInput.value = taskObjectToEdit.name
+        console.log(taskObjectToEdit)
+        taskNameInput.value = taskObjectToEdit.task
 
         taskNameField.appendChild(taskNameLabel);
         taskNameField.appendChild(taskNameInput);
 
         let taskDateField = document.createElement("h5");
 
-        taskDateLabel = document.createElement("label");
+        let taskDateLabel = document.createElement("label");
         taskDateLabel.textContent = "taskDate"
         let taskDateInput = document.createElement("input");
-        taskDateInput.textContent = taskObjectToEdit.date
+        taskDateInput.value = taskObjectToEdit.date
 
         taskDateField.appendChild(taskDateLabel);
         taskDateField.appendChild(taskDateInput);
 
         let taskCompletionField = document.createElement("h5");
 
-        taskCompletionLabel = document.createElement("label");
+        let taskCompletionLabel = document.createElement("label");
         taskCompletionLabel.textContent = "taskCompletionDate"
         let taskCompletionInput = document.createElement("input");
-        taskCompletionInput.textContent = taskObjectToEdit.completionDate
+        taskCompletionInput.value = taskObjectToEdit.completionDate
 
         taskCompletionField.appendChild(taskCompletionLabel);
         taskCompletionField.appendChild(taskCompletionInput);
 
         let editButton = document.createElement("button");
-        editButton.textContent = "Edit Task"
+        editButton.textContent = "Save Task"
 
         editButton.addEventListener("click", () => {
             let editedTask = {
-                name: inputTaskName.value,
-                date: taskDate.value,
-                completionDate: inputCompleteDate.value
+                name: taskNameInput.value,
+                date: taskDateInput.value,
+                completionDate: taskCompletionInput.value
             }
             
-            taskCollection.putExistingTask(taskObjectToEdit.id, editedTask)
+            taskCollection.editedTask(taskObjectToEdit.id, editedTask)
             .then(response => {
                 taskList.taskify()
             })
         })
 
-        let taskItemArticle = document.querySelector(`${articleId}`)
+        let taskItemArticle = document.querySelector(".formTasks")
         while (taskItemArticle.firstChild) {
             taskItemArticle.removeChild(taskItemArticle.firstChild);
         }

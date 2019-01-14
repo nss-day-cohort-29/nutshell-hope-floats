@@ -19,12 +19,15 @@ const tasks = {
 
         let editButton = document.createElement("button");
         editButton.textContent = "Edit Task"
+        editButton.setAttribute("id", `editTask--${taskObject.id}`)
         editButton.addEventListener("click", () => {
-            let articleId = event.target.parentNode.id
+            let articleId = event.target.id
+            console.log(articleId)
             let taskId = articleId.split("--")[1]
+            console.log(taskId)
             taskCollection.getTasks(taskId)
-                .then(reponse => {
-                    taskList.taskify()
+                .then(response => {
+                    taskEditCollection.createAndAppendForm(response)
                 })
         })
 
