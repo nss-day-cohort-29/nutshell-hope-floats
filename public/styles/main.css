@@ -1,4 +1,4 @@
-.displayEvents > article:first-child {
-    font-size: 20px;
+.displayEvents > fieldset:first-child {
+    font-size: 17px;
     font-weight: bold;
   }
