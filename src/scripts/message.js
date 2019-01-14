@@ -8,17 +8,20 @@ const message = {
     
     messageArticle.setAttribute("id", `message--${messageObject.id}`)
     messageArticle.setAttribute("class", "messageArticle")
+    // let addcolor = ["red","green","blue","yellow","orange"]
+    // messageArticle.classList.add(...addcolor)
+
     
     let messageName = document.createElement("h3")
     messageName.textContent = messageObject.SenderName
 
-    let messageContent = document.createElement("p")
+    let messageContent = document.createElement("section")
     messageContent.textContent = messageObject.Message
 
-    let date = document.createElement("p")
+    let date = document.createElement("section")
     date.textContent = messageObject.Date
 
-    
+  
     let editMessageButton = document.createElement("button")
     editMessageButton.textContent = "Edit"
     editMessageButton.addEventListener("click", () => {

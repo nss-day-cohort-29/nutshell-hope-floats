@@ -2,12 +2,17 @@ import messageCollection from "./messageCollection"
 import messageList from "./messageList"
 
 const messageForm = {
-  createAndAppendForm() {
+  
+  clearInputForm(){
+  document.querySelector("#message__name").value = ""
+  document.querySelector("#message__content"). value = ""
+},
 
-
-
+createAndAppendForm() {
+    
     let formHeader = document.createElement("h2")
     formHeader.textContent = "   Welcome To Chat Box"
+    formHeader.setAttribute("id", "formHeader_id")
 
 
     let messageNameField = document.createElement("fieldset")
@@ -79,6 +84,12 @@ const messageForm = {
         ? ("0" + now.getSeconds())
         : (now.getSeconds())));
   },
+//   color(){
+//     let colorArray = ["red","green","blue","yellow","orange"]
+//   for(i=0;i < colorArray.length;i++){
+//     colorArray[i]
+//   }
+// },
 
 
 
@@ -102,16 +113,13 @@ const messageForm = {
       .then(reponse => {
 
         messageList.chatify()
+    
+        messageForm.clearInputForm()
         })
 
 
   }
   
-  clearForm() {
-    inputMessageName.value = ""
-    inputMessageContent.value = ""
-  }
-  messageForm.clearForm()
 
 
 }
