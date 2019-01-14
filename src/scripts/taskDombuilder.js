@@ -15,16 +15,16 @@ const taskBuilder = {
         taskNameField.appendChild(taskNameLabel);
         taskNameField.appendChild(taskName);
 
-        let taskDateField = document.createElement("fieldset");
+        // let taskDateField = document.createElement("fieldset");
 
-        let taskDateLabel = document.createElement("label");
-        let taskDate = document.createElement("input");
-        taskDate.setAttribute("id", "taskDate");
-        taskDate.placeholder = "Date of Task";
-        taskDate.setAttribute("name", "task-date");
+        // let taskDateLabel = document.createElement("label");
+        // let taskDate = document.createElement("input");
+        // taskDate.setAttribute("id", "taskDate");
+        // taskDate.placeholder = "Date of Task";
+        // taskDate.setAttribute("name", "task-date");
 
-        taskDateField.appendChild(taskDateLabel);
-        taskDateField.appendChild(taskDate);
+        // taskDateField.appendChild(taskDateLabel);
+        // taskDateField.appendChild(taskDate);
 
         let taskCompleteField = document.createElement("fieldset");
 
@@ -45,7 +45,7 @@ const taskBuilder = {
 
         let taskFormFragment = document.createDocumentFragment()
         taskFormFragment.appendChild(taskNameField);
-        taskFormFragment.appendChild(taskDateField);
+        // taskFormFragment.appendChild(taskDateField);
         taskFormFragment.appendChild(taskCompleteField);
         taskFormFragment.appendChild(submitButton);
 
@@ -56,12 +56,12 @@ const taskBuilder = {
     handleNewTask() {
 
         let inputTaskName = document.querySelector("#taskName").value
-        let taskDate = document.querySelector("#taskDate").value
+        // let taskDate = document.querySelector("#taskDate").value
         let inputCompletionDate = document.querySelector("#task-Completion").value
 
         let newTask = {
-            task: inputTaskName,
-            date: taskDate,
+            taskName: inputTaskName,
+            // date: taskDate,
             completionDate: inputCompletionDate
         }
 

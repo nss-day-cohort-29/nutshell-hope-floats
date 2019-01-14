@@ -9,7 +9,7 @@ const tasks = {
         let formTasks = document.createElement("article");
 
         let taskHeader = document.createElement("p");
-        taskHeader.textContent = taskObject.task;
+        taskHeader.textContent = taskObject.taskName;
 
         let taskInput = document.createElement("h5");
         taskInput.textContent = taskObject.date;
@@ -22,9 +22,9 @@ const tasks = {
         editButton.setAttribute("id", `editTask--${taskObject.id}`)
         editButton.addEventListener("click", () => {
             let articleId = event.target.id
-            console.log(articleId)
+            
             let taskId = articleId.split("--")[1]
-            console.log(taskId)
+            
             taskCollection.getTasks(taskId)
                 .then(response => {
                     taskEditCollection.createAndAppendForm(response)
