@@ -1,4 +1,5 @@
 import loginCollection from "./loginCollection"
+import validateUserInputs from "./LoginValidation"
 
 const registerBuilder = {
    registerBuilding(){
@@ -29,6 +30,10 @@ const registerBuilder = {
         let loginButton = document.createElement("button")
         loginButton.textContent = "login"
         loginButton.setAttribute("class", "login")
+        
+        loginButton.addEventListener("click", validateUserInputs.handleLogin)
+        // loginValidationButton.addEventListener("click", console.log(loginValidationButton))
+        
 
         let registerButton = document.createElement("button")
         registerButton.textContent = "register"
