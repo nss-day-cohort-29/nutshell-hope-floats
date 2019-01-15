@@ -28,6 +28,7 @@ const tasks = {
             taskCollection.getTasks(taskId)
                 .then(response => {
                     taskEditCollection.createAndAppendForm(response)
+                    // console.log(taskId)
                 })
         })
 

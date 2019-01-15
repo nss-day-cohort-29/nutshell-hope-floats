@@ -36,12 +36,11 @@ const taskEditCollection = {
         let taskCompletionInput = document.createElement("input");
         taskCompletionInput.value = taskObjectToEdit.completionDate
 
-        let taskCompletionCheck = document.createElement("input")
-        taskCompletionCheck.setAttribute("type", "checkbox")
+        let taskCompletionCheck = document.createElement("id", "myCheck")
 
         taskCompletionField.appendChild(taskCompletionLabel);
         taskCompletionField.appendChild(taskCompletionInput);
-        // taskCompletionField.appendChild(taskCompletionCheck);
+        taskCompletionField.appendChild(taskCompletionCheck);
 
         let editButton = document.createElement("button");
         editButton.textContent = "Update Task"
@@ -67,6 +66,7 @@ const taskEditCollection = {
         // taskItemArticle.appendChild(taskDateField);
         taskItemArticle.appendChild(taskCompletionField);
         taskItemArticle.appendChild(editButton);
+        taskItemArticle.appendChild(taskCompletionCheck);
     }
 }
 
