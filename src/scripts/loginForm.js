@@ -1,4 +1,3 @@
-import loginCollection from "./loginCollection"
 import validateUserInputs from "./LoginValidation"
 import validateRegisterInputs from "./LoginValidation"
 

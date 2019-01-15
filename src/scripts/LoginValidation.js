@@ -1,5 +1,5 @@
 import loginCollection from "./loginCollection"
-import registerBuilder from "./loginForm"
+
 
 
 const validateUserInputs = {
@@ -23,7 +23,7 @@ const validateUserInputs = {
                 })
             })
         }
-},
+}
 const validateRegisterInputs = {
 
     handleAddNewRegister() {
@@ -36,7 +36,11 @@ const validateRegisterInputs = {
                     if (register === user.username && email === user.email) {
                         console.log(username, "is Registered Already")
                         sessionStorage.setItem("userID", user.id)
+                        sessionStorage.setItem("userID", user.email)
                     }
+
+
+
                     else {
                         let newUser = {
                             username: register,
@@ -51,6 +55,6 @@ const validateRegisterInputs = {
                 })
             })
         }
-},
+}
 
 export default {validateUserInputs,validateRegisterInputs}

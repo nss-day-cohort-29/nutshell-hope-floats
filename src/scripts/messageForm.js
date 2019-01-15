@@ -1,3 +1,4 @@
+
 import messageCollection from "./messageCollection"
 import messageList from "./messageList"
 
@@ -72,13 +73,13 @@ createAndAppendForm() {
   },
   getTimeStamp() {
     var now = new Date();
-    return ((now.getMonth() + 1) + '/' +
-      (now.getDate()) + '/' +
+    return ((now.getMonth() + 1) + "/" +
+      (now.getDate()) +"/" +
       now.getFullYear() + " " +
-      now.getHours() + ':' +
+      now.getHours() + ":" +
       ((now.getMinutes() < 10)
         ? ("0" + now.getMinutes())
-        : (now.getMinutes())) + ':' +
+        : (now.getMinutes())) + ":" +
 
       ((now.getSeconds() < 10)
         ? ("0" + now.getSeconds())
@@ -93,7 +94,7 @@ createAndAppendForm() {
 
 
 
-  handleAddNewMessage(event) {
+  handleAddNewMessage() {
 
     let inputMessageName = document.querySelector("#message__name")
     let inputMessageContent = document.querySelector("#message__content")
