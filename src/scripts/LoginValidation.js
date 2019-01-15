@@ -1,8 +1,13 @@
 import loginCollection from "./loginCollection"
 
 
+Const validateUserInputs = {
+    
+    clearInputForm(){
+        document.querySelector("#registerName").value = ""
+        document.querySelector("#loginEmail"). value = ""
+      },
 
-const validateUserInputs = {
 
     handleLogin() {
         let inputName = document.querySelector("#registerName").value
@@ -20,41 +25,13 @@ const validateUserInputs = {
                     }
 
 
-                })
-            })
-        }
-}
-const validateRegisterInputs = {
-
-    handleAddNewRegister() {
-        let register = document.querySelector("#registerName").value
-        let email = document.querySelector("#loginEmail").value
-        console.log(username)
-        loginCollection.getAllLogin()
-            .then(users => {
-                users.forEach(user => {
-                    if (register === user.username && email === user.email) {
-                        console.log(username, "is Registered Already")
-                        sessionStorage.setItem("userID", user.id)
-                        sessionStorage.setItem("userID", user.email)
-                    }
-
-
-
-                    else {
-                        let newUser = {
-                            username: register,
-                            email: email
-                         }
-                         console.log(newUser);
-                         loginCollection.postAllLogin(newUser)
-                        alert("You are Registered!")
-                    }
-
 
                 })
+                validateUserInputs.clearInputForm()
             })
-        }
+    }
 }
 
-export default {validateUserInputs,validateRegisterInputs}
+
+
+export default validateUserInputs

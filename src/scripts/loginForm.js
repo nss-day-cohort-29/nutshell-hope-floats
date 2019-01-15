@@ -1,8 +1,14 @@
 import validateUserInputs from "./LoginValidation"
-import validateRegisterInputs from "./LoginValidation"
+import validateRegisterInputs from "./RegistrationValidation"
 
 const registerBuilder = {
+      
    registerBuilding(){
+
+         let eventHeaders = document.createElement("h2");
+         eventHeaders.textContent = "Welcome to Nutshell";
+         eventHeaders.setAttribute("id", "formEvents_id")
+
         let registerField = document.createElement("article")
 
         let registerLabel = document.createElement("label")
@@ -41,6 +47,7 @@ const registerBuilder = {
 
         registerButton.addEventListener("click", validateRegisterInputs.handleAddNewRegister)
         let loginFormFragment = document.createDocumentFragment()
+        loginFormFragment.appendChild(eventHeaders)
         loginFormFragment.appendChild(registerField)
         loginFormFragment.appendChild(emailField)
         loginFormFragment.appendChild(loginButton)
@@ -50,7 +57,7 @@ const registerBuilder = {
         loginArticle.appendChild(loginFormFragment)
         return loginFormFragment
    }
-
+      
       //   handleAddNewRegister () {
       //    let register = document.querySelector("#registerName").value
       //    let email = document.querySelector("#loginEmail").value

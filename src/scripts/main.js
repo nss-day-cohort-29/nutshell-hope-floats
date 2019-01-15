@@ -1,3 +1,8 @@
+import taskList from "./taskList"
+import taskBuilder from "./taskDombuilder"
+
+taskBuilder.taskBuilding()
+taskList.taskify()
 import messageList from "./messageList"
 import messageForm from "./messageForm"
 import eventList from "./eventList"
