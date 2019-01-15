@@ -4,6 +4,11 @@ import tasks from "./task";
 
 const taskBuilder = {
     taskBuilding() {
+
+        let taskHeader = document.createElement("h2");
+        taskHeader.textContent = "Tasks";
+        taskHeader.setAttribute("id", "formTasks_Id")
+
         let taskNameField = document.createElement("fieldset");
 
         let taskNameLabel = document.createElement("label");
@@ -44,6 +49,7 @@ const taskBuilder = {
         submitButton.addEventListener("click", this.handleNewTask)
 
         let taskFormFragment = document.createDocumentFragment()
+        taskFormFragment.appendChild(taskHeader);
         taskFormFragment.appendChild(taskNameField);
         // taskFormFragment.appendChild(taskDateField);
         taskFormFragment.appendChild(taskCompleteField);

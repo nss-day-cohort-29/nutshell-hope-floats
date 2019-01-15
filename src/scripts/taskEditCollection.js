@@ -11,21 +11,10 @@ const taskEditCollection = {
         let taskEditLabel = document.createElement("label");
         taskEditLabel.textContent = "taskName"
         let taskEditInput = document.createElement("input");
-        // console.log(taskObjectToEdit)
         taskEditInput.value = taskObjectToEdit.taskName
 
         taskEditField.appendChild(taskEditLabel);
         taskEditField.appendChild(taskEditInput);
-
-        // let taskDateField = document.createElement("h5");
-
-        // let taskDateLabel = document.createElement("label");
-        // taskDateLabel.textContent = "taskDate"
-        // let taskDateInput = document.createElement("input");
-        // taskDateInput.value = taskObjectToEdit.date
-
-        // taskDateField.appendChild(taskDateLabel);
-        // taskDateField.appendChild(taskDateInput);
 
         let taskCompletionField = document.createElement("fieldset");
 
@@ -49,7 +38,6 @@ const taskEditCollection = {
         editButton.addEventListener("click", () => {
             let editedTask = {
                 taskName: taskEditInput.value,
-                // date: taskDateInput.value,
                 completionDate: taskCompletionInput.value
             }
             
@@ -64,10 +52,8 @@ const taskEditCollection = {
             taskItemArticle.removeChild(taskItemArticle.firstChild);
         }
         taskItemArticle.appendChild(taskEditField);
-        // taskItemArticle.appendChild(taskDateField);
         taskItemArticle.appendChild(taskCompletionField);
         taskItemArticle.appendChild(editButton);
-        taskItemArticle.appendChild(taskCompletionCheck);
     }
 }
 
