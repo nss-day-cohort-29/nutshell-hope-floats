@@ -1,5 +1,6 @@
 import loginCollection from "./loginCollection"
 import validateUserInputs from "./LoginValidation"
+import validateRegisterInputs from "./LoginValidation"
 
 const registerBuilder = {
    registerBuilding(){
@@ -39,7 +40,7 @@ const registerBuilder = {
         registerButton.textContent = "register"
         registerButton.setAttribute("class", "register")
 
-        registerButton.addEventListener("click", this.handleAddNewRegister)
+        registerButton.addEventListener("click", validateRegisterInputs.handleAddNewRegister)
         let loginFormFragment = document.createDocumentFragment()
         loginFormFragment.appendChild(registerField)
         loginFormFragment.appendChild(emailField)
@@ -49,19 +50,19 @@ const registerBuilder = {
         let loginArticle = document.querySelector(".loginArticle")
         loginArticle.appendChild(loginFormFragment)
         return loginFormFragment
-   },
+   }
 
-        handleAddNewRegister () {
-         let register = document.querySelector("#registerName").value
-         let email = document.querySelector("#loginEmail").value
-         console.log(register)
-         let newUser = {
-            username: register,
-            email: email
-         }
-         console.log(newUser);
-         loginCollection.postAllLogin(newUser)
+      //   handleAddNewRegister () {
+      //    let register = document.querySelector("#registerName").value
+      //    let email = document.querySelector("#loginEmail").value
+      //    console.log(register)
+      //    let newUser = {
+      //       username: register,
+      //       email: email
+      //    }
+      //    console.log(newUser);
+      //    loginCollection.postAllLogin(newUser)
 
-      }
+      
 }
 export default registerBuilder
