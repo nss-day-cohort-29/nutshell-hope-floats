@@ -67,7 +67,7 @@ const taskEditCollection = {
         // taskItemArticle.appendChild(taskDateField);
         taskItemArticle.appendChild(taskCompletionField);
         taskItemArticle.appendChild(editButton);
-        taskItemArticle.appendChild(taskCompletionCheck);
+        // taskItemArticle.appendChild(taskCompletionCheck);
     }
 }
 
