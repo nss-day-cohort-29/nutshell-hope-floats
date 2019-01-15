@@ -36,7 +36,8 @@ const taskEditCollection = {
         let taskCompletionInput = document.createElement("input");
         taskCompletionInput.value = taskObjectToEdit.completionDate
 
-        let taskCompletionCheck = document.createElement("id", "myCheck")
+        let taskCompletionCheck = document.createElement("input")
+        taskCompletionCheck.setAttribute("type", "checkbox");
 
         taskCompletionField.appendChild(taskCompletionLabel);
         taskCompletionField.appendChild(taskCompletionInput);

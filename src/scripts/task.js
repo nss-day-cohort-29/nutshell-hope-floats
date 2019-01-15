@@ -17,6 +17,9 @@ const tasks = {
         let taskComplete = document.createElement("h5");
         taskComplete.textContent = taskObject.completionDate
 
+        let taskCompletionCheck = document.createElement("input")
+        taskCompletionCheck.setAttribute("type", "checkbox");
+
         let editButton = document.createElement("button");
         editButton.textContent = "Edit Task"
         editButton.setAttribute("id", `editTask--${taskObject.id}`)
@@ -35,7 +38,8 @@ const tasks = {
         formTasks.appendChild(taskHeader);
         formTasks.appendChild(taskInput);
         formTasks.appendChild(taskComplete);
-        formTasks.appendChild(editButton)
+        formTasks.appendChild(editButton);
+        formTasks.appendChild(taskCompletionCheck);
 
         return formTasks
     }
