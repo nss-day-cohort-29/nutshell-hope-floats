@@ -4,9 +4,7 @@ import eventEditForm from "./editForm";
 
 const createEvent = {
     eventBuilder(eventObject){
-        let eventArticle = document.createElement("article");
-
-        let horizontalLine = document.createElement("hr");
+        let eventArticle = document.createElement("fieldset");
 
         let eventName = document.createElement("h3")
         eventName.textContent = eventObject.event;
@@ -49,7 +47,6 @@ const createEvent = {
         eventArticle.appendChild(eventLocation)
         eventArticle.appendChild(deleteButton)
         eventArticle.appendChild(editButton)
-        eventArticle.appendChild(horizontalLine)
 
         return eventArticle
     }
