@@ -4,6 +4,10 @@ import eventList from "./eventList";
 const eventBuilder = {
     eventBuilding(){
 
+        let eventHeader = document.createElement("h2");
+        eventHeader.textContent = "Events";
+        eventHeader.setAttribute("id", "formEvents_id")
+
         let contactEventField = document.createElement("fieldset")
 
         let eventNameLabel = document.createElement("label")
@@ -48,6 +52,7 @@ const eventBuilder = {
         submitButton.addEventListener("click", this.handleAddNewEvent)
 
         let eventFormFragment = document.createDocumentFragment()
+        eventFormFragment.appendChild(eventHeader)
         eventFormFragment.appendChild(contactEventField)
         eventFormFragment.appendChild(dateField)
         eventFormFragment.appendChild(locationField)

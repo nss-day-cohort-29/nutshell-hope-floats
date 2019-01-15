@@ -2,6 +2,11 @@ import loginCollection from "./loginCollection"
 
 const registerBuilder = {
    registerBuilding(){
+
+         let eventHeaders = document.createElement("h2");
+         eventHeaders.textContent = "Welcome to Nutshell";
+         eventHeaders.setAttribute("id", "formEvents_id")
+
         let registerField = document.createElement("article")
 
         let registerLabel = document.createElement("label")
@@ -36,6 +41,7 @@ const registerBuilder = {
 
         registerButton.addEventListener("click", this.handleAddNewRegister)
         let loginFormFragment = document.createDocumentFragment()
+        loginFormFragment.appendChild(eventHeaders)
         loginFormFragment.appendChild(registerField)
         loginFormFragment.appendChild(emailField)
         loginFormFragment.appendChild(loginButton)
