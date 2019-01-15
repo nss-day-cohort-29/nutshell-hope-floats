@@ -29,7 +29,7 @@ const createNewsArticle = {
             eventsCollection.getEvent(newsId)
             .then(response => {
             newsEditForm.createAndAppendForm(response)
-            }) 
+            })
             })
 
             let deleteButton = document.createElement("button")
