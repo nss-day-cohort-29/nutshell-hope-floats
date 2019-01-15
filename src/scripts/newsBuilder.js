@@ -1,23 +1,28 @@
+import newsCollection from "./newsCollection"
+import newsList from "./newsList";
+
 const newsBuilder = {
     newsBuilding(){
-        let newsTitleField = document.createElement("fieldset")
+        console.log("newsbuilder-running")
+        
+        let newsField = document.createElement("fieldset")
 
-        let newsTitleLabel = document.createElement("label")
-        newsTitleLabel.textContent = "Title Name"
+        let newsTitleLabel = document.createElement("articleLabel")
         newsTitleLabel.setAttribute("for", "title__name")
         let newsInputTitle = document.createElement("input");
         newsInputTitle.setAttribute("id", "newsName")
+        newsInputTitle.placeholder = "Article Title"
         newsInputTitle.setAttribute("name", "news-name")
 
-        newsTitleField.appendChild(newsTitleLabel)
-        newsTitleField.appendChild(newsInputTitle)
+        newsField.appendChild(newsTitleLabel)
+        newsField.appendChild(newsInputTitle) 
 
         let urlField = document.createElement("fieldset")
 
         let urlLabel = document.createElement("urlLabel")
-        urlLabel.textContent = "URL"
         let newsInputURL = document.createElement("input")
         newsInputURL.setAttribute("id", "url")
+        newsInputURL.placeholder = "Article URL"
         newsInputURL.setAttribute("name", "url")
         
         urlField.appendChild(urlLabel)
@@ -27,10 +32,10 @@ const newsBuilder = {
         let summaryField = document.createElement("fieldset")
 
         let summaryLabel = document.createElement("summarylabel")
-        summaryLabel.textContent = "Summary"
 
         let newsInputSummary = document.createElement("input")
         newsInputSummary.setAttribute("id", "newsSummary")
+        newsInputSummary.placeholder = "Synopsis"
         newsInputSummary.setAttribute("name", "news-summary")
 
         summaryField.appendChild(summaryLabel)
@@ -40,33 +45,58 @@ const newsBuilder = {
         submitButton.textContent = "Add News"
         submitButton.setAttribute("class", "news-save")
 
-        submitButton.addEventListener("click", this.handleAddNewEvent)
+        submitButton.addEventListener("click", this.handleAddNewArticle)
 
         let newsFormFragment = document.createDocumentFragment()
-        newsFormFragment.appendChild(newsInputTitle)
-        newsFormFragment.appendChild(newsInputURL)
-        newsFormFragment.appendChild(newsInputSummary)
+        newsFormFragment.appendChild(newsField)
+        newsFormFragment.appendChild(urlField)
+        newsFormFragment.appendChild(summaryField)
         newsFormFragment.appendChild(submitButton)
 
         let formArticle = document.querySelector(".News")
         formArticle.appendChild(newsFormFragment)
         return newsInputTitle
     },
-    handleAddNewArticle () {
+    
+
+    getTimeStamp() {
+        var now = new Date();
+        return ((now.getMonth() + 1) + '/' +
+          (now.getDate()) + '/' +
+          now.getFullYear() + " " +
+          now.getHours() + ':' +
+          ((now.getMinutes() < 10)
+            ? ("0" + now.getMinutes())
+            : (now.getMinutes())) + ':' +
+     
+          ((now.getSeconds() < 10)
+            ? ("0" + now.getSeconds())
+            : (now.getSeconds())));
+      },
+
+    handleAddNewArticle () { console.log()
         let inputNewsArticle = document.querySelector("#newsName").value
-        let inputNewsURL = document.querySelector("#newsDate").value
-        let inputNewsSummary = document.querySelector("#newsLocation").value
+        let inputNewsURL = document.querySelector("#url").value
+        let inputNewsSummary = document.querySelector("#newsSummary").value
+        let articleDate = newsBuilder.getTimeStamp()
 
         console.log(inputNewsSummary)
 
-        let newEvent = {
+        let newArticle = {
             article: inputNewsArticle,
             URL: inputNewsURL,
-            summary: inputNewsSummary
+            summary: inputNewsSummary,
+            date: articleDate
         }
-        console.log(newEvent)
+        newsCollection.postAllNews(newArticle)
+        .then(() => {
+          newsList.newsify()
+        })
+      }
     }
-}
+    
+    export default newsBuilder
 
-export default newsBuilder
+
+
 
