@@ -26,7 +26,7 @@ const createEvent = {
     eventsCollection.getEvent(eventId)
     .then(response => {
         eventEditForm.createAndAppendForm(response)
-        })
+        }) 
     })
 
         let deleteButton = document.createElement("button")
