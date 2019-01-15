@@ -15,7 +15,7 @@ const newsBuilder = {
         newsInputTitle.setAttribute("name", "news-name")
 
         newsField.appendChild(newsTitleLabel)
-        newsField.appendChild(newsInputTitle) 
+        newsField.appendChild(newsInputTitle)
 
         let urlField = document.createElement("fieldset")
 
