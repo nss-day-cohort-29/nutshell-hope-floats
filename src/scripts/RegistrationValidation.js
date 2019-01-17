@@ -1,6 +1,6 @@
 import loginCollection from "./loginCollection"
 
-validateRegisterInputs = {
+const validateRegisterInputs = {
     
     clearInputForm(){
         document.querySelector("#registerName").value = ""
@@ -11,12 +11,12 @@ validateRegisterInputs = {
         console.log("hello")
         let register = document.querySelector("#registerName").value
         let email = document.querySelector("#loginEmail").value
-        console.log(username)
+        console.log(register)
         loginCollection.getAllLogin()
             .then(users => {
                 users.forEach(user => {
                     if (register === user.username && email === user.email) {
-                        console.log(username, "is Registered Already")
+                        console.log(register, "is Registered Already")
                         sessionStorage.setItem("userID", user.id)
                         sessionStorage.setItem("userID", user.email)
                     }
@@ -24,7 +24,7 @@ validateRegisterInputs = {
 
 
                     else {
-                        alert("You are Registered!")
+                        alert("Now you will be registered")
                         let newUser = {
                             username: register,
                             email: email

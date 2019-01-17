@@ -1,12 +1,12 @@
 import loginCollection from "./loginCollection"
 
 
-Const validateUserInputs = {
-    
-    clearInputForm(){
+const validateUserInputs = {
+
+    clearInputForm() {
         document.querySelector("#registerName").value = ""
-        document.querySelector("#loginEmail"). value = ""
-      },
+        document.querySelector("#loginEmail").value = ""
+    },
 
 
     handleLogin() {
@@ -19,6 +19,7 @@ Const validateUserInputs = {
                     if (inputName === user.username && inputEmail === user.email) {
                         console.log(inputName, "is logged in")
                         sessionStorage.setItem("userID", user.id)
+                        sessionStorage.setItem("userID", user.email)
                     }
                     else {
                         alert("Not a Registered User")
