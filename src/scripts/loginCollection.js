@@ -13,6 +13,10 @@ const loginCollection = {
         body: JSON.stringify(newLoginToSave)
     })
     // location.reload(true);
-  }
+  },
+  getUser(UserId) {
+    return fetch(`http://localhost:8088/UserId/${UserId}`)
+      .then(response => response.json())
+  },
 }
 export default loginCollection

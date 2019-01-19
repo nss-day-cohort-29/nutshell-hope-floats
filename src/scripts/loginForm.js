@@ -1,6 +1,8 @@
-import loginCollection from "./loginCollection"
+import validateUserInputs from "./LoginValidation"
+import validateRegisterInputs from "./RegistrationValidation"
 
 const registerBuilder = {
+      
    registerBuilding(){
 
          let eventHeaders = document.createElement("h2");
@@ -34,12 +36,16 @@ const registerBuilder = {
         let loginButton = document.createElement("button")
         loginButton.textContent = "login"
         loginButton.setAttribute("class", "login")
+        
+        loginButton.addEventListener("click", validateUserInputs.handleLogin)
+        // loginValidationButton.addEventListener("click", console.log(loginValidationButton))
+        
 
         let registerButton = document.createElement("button")
         registerButton.textContent = "register"
         registerButton.setAttribute("class", "register")
 
-        registerButton.addEventListener("click", this.handleAddNewRegister)
+        registerButton.addEventListener("click", validateRegisterInputs.handleAddNewRegister)
         let loginFormFragment = document.createDocumentFragment()
         loginFormFragment.appendChild(eventHeaders)
         loginFormFragment.appendChild(registerField)
@@ -50,19 +56,19 @@ const registerBuilder = {
         let loginArticle = document.querySelector(".loginArticle")
         loginArticle.appendChild(loginFormFragment)
         return loginFormFragment
-   },
+   }
+      
+      //   handleAddNewRegister () {
+      //    let register = document.querySelector("#registerName").value
+      //    let email = document.querySelector("#loginEmail").value
+      //    console.log(register)
+      //    let newUser = {
+      //       username: register,
+      //       email: email
+      //    }
+      //    console.log(newUser);
+      //    loginCollection.postAllLogin(newUser)
 
-        handleAddNewRegister () {
-         let register = document.querySelector("#registerName").value
-         let email = document.querySelector("#loginEmail").value
-         console.log(register)
-         let newUser = {
-            username: register,
-            email: email
-         }
-         console.log(newUser);
-         loginCollection.postAllLogin(newUser)
-
-      }
+      
 }
 export default registerBuilder
